@@ -7,3 +7,6 @@ FROM
 WHERE job_posted_date::DATE > '2023-06-01'
 GROUP BY
     job_schedule_type;
+
+
+    
