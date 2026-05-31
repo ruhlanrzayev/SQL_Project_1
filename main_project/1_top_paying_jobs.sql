@@ -8,14 +8,14 @@ Question: What are the top-paying data analyst jobs?
 
 SELECT
     job_id,
-    name AS Company_Name,
+    name AS company_name,
     job_title,
-    job_location AS Location,
-    job_schedule_type AS Schedule_Type,
-    salary_year_avg AS Average_Salary,
-    job_posted_date::DATE AS Posted_Date
+    job_location,
+    job_schedule_type,
+    salary_year_avg,
+    job_posted_date::DATE
 FROM job_postings_fact
-JOIN company_dim ON company_dim.company_id = job_postings_fact.company_id
+LEFT JOIN company_dim ON company_dim.company_id = job_postings_fact.company_id
 WHERE
     job_title_short = 'Data Analyst'
     AND job_location = 'Anywhere'
@@ -26,10 +26,14 @@ LIMIT 10;
 
 /*
 Here's the breakdown of the top data analyst jobs in 2023:
-Wide Salary Range: Top 10 paying data analyst roles span from $184,000 to $650,000, indicating significant salary potential in the field.
-Diverse Employers: Companies like SmartAsset, Meta, and AT&T are among those offering high salaries, showing a broad interest across different industries.
-Job Title Variety: There's a high diversity in job titles, from Data Analyst to Director of Analytics, reflecting varied roles and specializations within data analytics.
 
+Mantys is the outlier — at $650K/year, it sits in a class of its own, more than $300K above the next highest offer (Meta at $336K). Whether this is a compensation error in the posting or a very unusual package, it skews the average significantly. Excluding it, the remaining 9 roles average around $220K/year.
+Big Tech pays big — Meta's Director of Analytics at $336K and AT&T's Associate Director at $256K confirm that senior, director-level roles at large companies dominate the top end.
+Senior titles cluster at $185K–$205K — roles like "Principal Data Analyst" at SmartAsset and "AV Performance Analysis" at Motional suggest a consistent market floor for senior ICs.
+All 10 roles were fully remote — 100% listed "Anywhere" as the location, reflecting the post-2022 normalization of remote work for high-paying analytics positions.
+Postings were spread across the year — from January (Motional, UCLA Health) through December (Pinterest, Inclusively), with a small cluster in Q3 (August) from SmartAsset and Meta.
+
+Targeting director or principal-level roles at large tech and finance companies (Meta, AT&T, Pinterest, SmartAsset) is the clearest path to $185K+ as a data analyst in 2023 — and all of them were remote.
 RESULTS
 =======
 [
