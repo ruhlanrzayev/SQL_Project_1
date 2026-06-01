@@ -203,6 +203,7 @@ LIMIT 25;
 | 233      | jira       | 20           |            104,918 |
 
 *Table of the most optimal skills for data analyst sorted by salary*
+![Top Optimal Skills](assets/5_optimal_skills.png)
 
 Here's a breakdown of the most optimal skills for Data Analysts in 2023: 
 - **High-Demand Programming Languages:** Python and R stand out for their high demand, with demand counts of 236 and 148 respectively. Despite their high demand, their average salaries are around $101,397 for Python and $100,499 for R, indicating that proficiency in these languages is highly valued but also widely available.
